@@ -31,10 +31,6 @@
 			scene.background = new THREE.Color( 0x0073e6 );
 			scene.add( grass );
 			scene.add( cube );
-			
-			const firstpersoncam = new FirstPersonControls(camera, cube);
-			firstpersoncam.lookSpeed = 0.8;
-			firstpersoncam.movementSpeed = 5;
 
 			camera.position.z = 5;
 
