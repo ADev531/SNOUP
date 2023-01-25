@@ -23,9 +23,13 @@
 			document.body.appendChild( renderer.domElement );
 
 			const geometry = new THREE.BoxGeometry();
+			const geometry2 = new THREE.BoxGeometry();
 			const material = new THREE.MeshBasicMaterial( { color: 0x666699 } );
+			const grassmaterial = new THREE.MeshBasicMaterial( { color: 0x006600 } );
 			const cube = new THREE.Mesh( geometry, material );
-			scene.background = new THREE.Color( 0xffffff );
+			const grass = new THREE.Mesh( geometry2, grassmaterial );
+			scene.background = new THREE.Color( 0x0073e6 );
+			scene.add( grass );
 			scene.add( cube );
 			
 			const firstpersoncam = new THREE.FirstPersonControls(camera, cube);
