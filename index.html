@@ -13,7 +13,7 @@
 		<script src="js/three.js"></script>
 		<script>
 			const scene = new THREE.Scene();
-			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 10);
 			
 			var xSpeed = 0.0001;
 			var ySpeed = 0.0001;
@@ -27,6 +27,10 @@
 			const cube = new THREE.Mesh( geometry, material );
 			scene.background = new THREE.Color( 0xffffff );
 			scene.add( cube );
+			
+			const firstpersoncam = new THREE.FirstPersonControls(camera, cube);
+			firstpersoncam.lookSpeed = 0.8;
+			firstpersoncam.movementSpeed = 5;
 
 			camera.position.z = 5;
 
